@@ -1,0 +1,29 @@
+@echo off
+TITLE CHECK FILE CHECKSUM
+COLOR 02
+:MENU
+CLS
+ECHO.
+ECHO DRAG AND DROP FILE 
+SET /P RUTA=RUTA:
+CLS
+ECHO CHECKSUMs: MD2, MD4, MD5, SHA1, SHA256, SHA384, SHA512.
+ECHO.
+CertUtil -hashfile %RUTA% MD2
+ECHO.
+CertUtil -hashfile %RUTA% MD4
+ECHO.
+CertUtil -hashfile %RUTA% MD5
+ECHO.
+CertUtil -hashfile %RUTA% SHA1
+ECHO.
+CertUtil -hashfile %RUTA% SHA256
+ECHO.
+CertUtil -hashfile %RUTA% SHA384
+ECHO.
+CertUtil -hashfile %RUTA% SHA512
+ECHO.
+ECHO.
+ECHO. NEW CHECKSUM? Press any key...
+PAUSE>NUL
+GOTO MENU
